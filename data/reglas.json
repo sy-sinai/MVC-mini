@@ -1,0 +1,22 @@
+[
+  {
+    "minimo": 0,
+    "maximo": 10000,
+    "porcentaje": 3
+  },
+  {
+    "minimo": 10001,
+    "maximo": 25000,
+    "porcentaje": 5
+  },
+  {
+    "minimo": 25001,
+    "maximo": 50000,
+    "porcentaje": 7
+  },
+  {
+    "minimo": 50001,
+    "maximo": 999999999,
+    "porcentaje": 10
+  }
+]
