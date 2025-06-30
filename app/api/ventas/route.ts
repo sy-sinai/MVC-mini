@@ -3,9 +3,7 @@ import clientPromise, { isMongoDBAvailable } from "@/lib/mongodb"
 import { generateVentasData, mockVentas } from "@/lib/seed-data"
 
 export async function GET() {
-  try {
-    // Si no hay MongoDB disponible, usar datos mock
-    if (!isMongoDBAvailable()) {
+  try {    if (!isMongoDBAvailable()) {
       return NextResponse.json(mockVentas)
     }
 
@@ -32,7 +30,6 @@ export async function GET() {
     return NextResponse.json(existingVentas)
   } catch (error) {
     console.error("Error fetching ventas:", error)
-    // En caso de error, devolver datos mock
     return NextResponse.json(mockVentas)
   }
 }

@@ -4,7 +4,6 @@ import { vendedoresData, mockVendedores } from "@/lib/seed-data"
 
 export async function GET() {
   try {
-    // Si no hay MongoDB disponible, usar datos mock
     if (!isMongoDBAvailable()) {
       return NextResponse.json(mockVendedores)
     }
@@ -26,7 +25,6 @@ export async function GET() {
     return NextResponse.json(existingVendedores)
   } catch (error) {
     console.error("Error fetching vendedores:", error)
-    // En caso de error, devolver datos mock
     return NextResponse.json(mockVendedores)
   }
 }

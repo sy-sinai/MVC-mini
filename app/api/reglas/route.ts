@@ -4,7 +4,7 @@ import { reglasData, mockReglas } from "@/lib/seed-data"
 
 export async function GET() {
   try {
-    // Si no hay MongoDB disponible, usar datos mock
+
     if (!isMongoDBAvailable()) {
       return NextResponse.json(mockReglas)
     }
@@ -26,7 +26,7 @@ export async function GET() {
     return NextResponse.json(existingReglas)
   } catch (error) {
     console.error("Error fetching reglas:", error)
-    // En caso de error, devolver datos mock
+
     return NextResponse.json(mockReglas)
   }
 }
